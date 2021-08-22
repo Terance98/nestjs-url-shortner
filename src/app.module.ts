@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ShortnerModule } from './shortner/shortner.module';
+import { ShortnerService } from './shortner/shortner.service';
 
 @Module({
-  imports: [],
+  imports: [ShortnerModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ShortnerService],
 })
 export class AppModule {}
